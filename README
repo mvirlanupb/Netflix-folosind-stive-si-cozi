@@ -1,0 +1,113 @@
+VÎRLAN Mihnea-Alexandru 311CB
+gcc -Wall -g tema.c functiiCoada-Liste.c functiiLG.c functiiStiva-Liste.c Seriale.c -o tema2
+
+                           = Tema 2 SD Netflix =
+
+[ex1.out]...........................................passed  [02/135]
+[VALGRIND: FAILED]....................................
+[ex2.out]...........................................passed  [02/135]
+[VALGRIND: FAILED]....................................
+[ex3.out]...........................................passed  [02/135]
+[VALGRIND: FAILED]....................................
+[ex4.out]...........................................passed  [02/135]
+[VALGRIND: FAILED]....................................
+[test1.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test2.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test3.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test4.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test5.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test6.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test7.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test8.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test9.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test10.out]...........................................passed  [05/135]
+[VALGRIND: FAILED]....................................
+[test11.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test12.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test13.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test14.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test15.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test16.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test17.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test18.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test19.out]...........................................passed  [05/135]
+[VALGRIND: FAILED]....................................
+[test20.out]...........................................passed  [05/135]
+[VALGRIND: FAILED]....................................
+[test21.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test22.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test23.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test24.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test25.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test26.out]...........................................passed  [04/135]
+[VALGRIND: FAILED]....................................
+[test27.out]...........................................passed  [05/135]
+[VALGRIND: FAILED]....................................
+[test28.out]...........................................passed  [05/135]
+[VALGRIND: FAILED]....................................
+[test29.out]...........................................passed  [05/135]
+[VALGRIND: FAILED]....................................
+[test30.out]...........................................passed  [05/135]
+[VALGRIND: FAILED]....................................
+
+                                           Total: [135/135]
+Failed VALGRIND tests
+
+                                           Bonus: [00/20]
+
+
+
+
+		Precum a fost menționat în enunțul temei, am introdus rezultatele de la fiecare test. Am preferat, din motive
+	de siguranță să fac prin redirectare.
+		Prezenta temă este secționată după cum urmează
+	- fișierul sursă tema.c în care au fost definite funcții de comparare a două ratinguri de seriale, comparare a două nume
+	de seriale, extragere a poziției în top 10, de scădere, respectiv a creșterii poziției în clasamentul top 10, 
+	funcție care verifică egalitatea a două nume de seriale. Tot acolo, se realizează deschiderea fișierelor de intrare și ieșire
+	și parcurgerea fișierului de intrare linie cu linie. Coada watch_later, stivele history și currently_watching au fost declarate separat.
+	Am preferat să declar 4 liste separate cu care să lucrez, alegerea fiind personală. După while și getline am vrut să verific dacă am
+	de-a face cu secvența add” ” pentru a lua ID-ul corespunzător listei (categoria 1,2,3) în care să fac inserarea. Comanda a fost extrasă prima,
+	folosind strtok, în funcție de aceasta, prin structuri decizionale separate, se execută instrucțiunile necesare. La final, toate structurile
+	folosite sunt eliberate.
+	- fișierul sursă funcțiiCoada-Liste.c în care se află implementările unor funcții pe care le-am considerat ca fiind de bază, respectiv
+	inițierea unei cozi, adăugarea unui element într-o coadă, extragerea unui element dintr-o coadă, numărarea elementelor unei cozi (de la început
+	la sfârșit), distrugerea unei cozi și afișarea unei cozi. La partea de distrugere am considerat 2 variante, pentru că serialul conține coada sezoanelor
+	unde sunt stocate elemente de tip sezon, care conține și coada episoadelor unde sunt stocate duratele.
+	Este acompaniat de 2 fișiere header.
+	- fișierul sursă funcțiiStiva-Liste.h în care se află funcții considerate standard la prelucrarea unei stive cu elemente liste simplu
+	înlănțuite generice. Inițierea, introducerea unui element într-o stivă, extragerea vârfului, distrugerea unei stive în care am atașat și o funcție de
+	eliberare a informației, afișarea unei stive, mutarea vârfului unei stive și aducerea unui element în vârful stivei sunt funcții pe care le-am considerat ca fiind
+	esențiale. Am avut nevoie de o funcție care aduce un element în vârful stivei deoarece, la apelul funcției watch, dacă un serial se afla deja în stiva currently_watching,
+	acesta trebuie adus în vârful stivei, deoarece este serialul la care se face vizionarea în acel moment. Ordinea celorlalte elemente rămâne aceeași deoarece
+	am atașat o stivă auxiliară în care să păstrez toate elementele ce se află deasupra acelui serial. Când serialul țintă a ajuns în vârf îl pun într-o variabilă
+	auxiliară, golesc stiva auxiliară și apoi, din variabila auxiliară ajunge înapoi în stivă, de data asta în vârf. Fișierul sursă este susținut de 2 fișiere header.
+	- fișierul sursă functiiLG.c în care se află funcții considerate elementare la prelucrarea listelor simplu înlănțuite generice. Pe lângă inserările standard la începutul
+	listei, respectiv inserare după, am adăugat și o inserare ordonată în prezența a două condiții, a cărei descriere se află în fișierul sursă. Este susținut de fișierul
+	header tlg.h în care a fost definită lista.
+	- fișierul sursă Seriale.c conține funcțiile necesare prelucrării serialelor. Sunt incluse: citirea unui serial și inserarea unui serial în lista corespunzătoare, 
+	adăugarea unui sezon, mutarea unui serial într-o coadă sau stivă, mutarea unui serial dintr-o structură în alta. Conține descrieri. Este susținut de un fișier header
+	în care am definit structura unui serial, la care am vrut să adaug durata totală de vizionare, pentru o mai bună implementare a temei și o mai bună organizare. Conție și
+	structura unui sezon: un număr întreg care reprezintă numărul de episoade corespunzător sezonului și coada episoadelor care stochează duratele episoadelor. În structura serialului
+	este prezentă și coada sezoanelor care stochează elemente de tip Sezon. Toate cozile au fost declarate cu void*.
